@@ -51,7 +51,7 @@ namespace MyGame
            
             _objs = new Star[30];
             for (int i = 0; i < _objs.Length; i++)
-                _objs[i] = new Star(new Point(), new Point(-3-i, 0), new Size(1, 1));
+                _objs[i] = new Star(new Point(), new Point(-4-i, 0), new Size(1, 1));
         }        public static void Update()
         {
             foreach (BaseObject obj in _objs)
