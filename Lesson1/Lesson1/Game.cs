@@ -11,8 +11,13 @@ namespace Lesson1
         // Ширина и высота игрового поля
         public static int Width { get; set; }
         public static int Height { get; set; }
+        public static Star[] _stars;
+        public static SpaceShip myShip;
+        public static Planet planet1;
+        public static BaseObject[] _meteors;
         static Game()
         {
+
         }
         public static void Init(Form form)
         {
@@ -35,12 +40,6 @@ namespace Lesson1
         }
         public static void Draw()
         {
-            // Проверяем вывод графики
-            //Buffer.Graphics.Clear(Color.Black);
-            //Buffer.Graphics.DrawRectangle(Pens.White, new Rectangle(100, 100, 200, 200));
-            //Buffer.Graphics.FillEllipse(Brushes.Wheat, new Rectangle(100, 100, 200, 200));
-           // Buffer.Render();
-
             Buffer.Graphics.Clear(Color.Black);
             foreach (BaseObject obj in _stars)
                 obj.Draw();
@@ -50,10 +49,7 @@ namespace Lesson1
                 obj.Draw();
             Buffer.Render();
         }
-        public static Star[] _stars;
-        public static SpaceShip myShip;
-        public static Planet planet1;
-        public static BaseObject[] _meteors;
+
         public static void Load()
         {
            
@@ -61,18 +57,13 @@ namespace Lesson1
             for (int i = 0; i < _stars.Length; i++)
                 _stars[i] = new Star(new Point(), new Point(-4-i, 0), new Size(1, 1));
 
-             myShip = new SpaceShip(new Point(0, Height / 2), new Point (2, 0));
+             myShip = new SpaceShip(new Point(0, Height / 2), new Point ());
 
             planet1 = new Planet(new Point(650, 40), new Point(0, 0),new Size(80,80));
 
             _meteors = new Meteor[10];
             for (int i = 0; i < _meteors.Length; i++)
                 _meteors[i] = new Meteor(new Point(600, 100 + 50 * i), new Point());
-            //_meteors = new BaseObject[30];
-            //for (int i = 0; i < _meteors.Length; i++)
-            //    _meteors[i] = new BaseObject(new Point(600, i * 20), new Point(15 - i, 15 - i), new Size(20, 20));
-
-
 
         }
         public static void Update()

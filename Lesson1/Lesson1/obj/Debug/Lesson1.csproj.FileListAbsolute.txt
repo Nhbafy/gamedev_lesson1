@@ -16,3 +16,5 @@ C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Debug\Lesson1.cs
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Debug\Lesson1.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Debug\Lesson1.exe
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Debug\Lesson1.pdb
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Debug\Lesson1.Form1.resources
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Debug\bin\Debug\ship.png
