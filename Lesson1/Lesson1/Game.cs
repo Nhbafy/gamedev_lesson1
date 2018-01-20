@@ -30,7 +30,8 @@ namespace MyGame
             Load();
             Timer timer = new Timer { Interval = 50 };
             timer.Start();
-            timer.Tick += Timer_Tick;
+            timer.Tick += Timer_Tick;
+
         }
         public static void Draw()
         {
@@ -52,7 +53,8 @@ namespace MyGame
             _objs = new Star[30];
             for (int i = 0; i < _objs.Length; i++)
                 _objs[i] = new Star(new Point(), new Point(-4-i, 0), new Size(1, 1));
-        }        public static void Update()
+        }
+        public static void Update()
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
@@ -61,6 +63,8 @@ namespace MyGame
         {
             Draw();
             Update();
-        }
+        }
+
+
     }
-}
+}
