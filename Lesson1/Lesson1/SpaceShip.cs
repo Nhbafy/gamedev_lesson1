@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace Lesson1
 {
@@ -22,7 +23,23 @@ namespace Lesson1
         public override void Update()
         {
             Pos.X = Pos.X + Dir.X;
-           
+
+        }
+        public static void Up(SpaceShip myShip)
+        { 
+             myShip.Pos.Y -= 17;
+        }
+        public static void Down(SpaceShip myShip)
+        {
+            myShip.Pos.Y += 17;
+        }
+        public static void Right(SpaceShip myShip)
+        {
+            myShip.Pos.X += 17;
+        }
+        public static void Left(SpaceShip myShip)
+        {
+            myShip.Pos.X -= 17;
         }
     }
 }

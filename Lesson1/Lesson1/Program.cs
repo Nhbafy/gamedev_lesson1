@@ -7,7 +7,7 @@ namespace Lesson1
     {
         static void Main(string[] args)
         {
-            Form form = new Form
+            Form1 form = new Form1
             {
                 Width = 800,
                 Height = 600

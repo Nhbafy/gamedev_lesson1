@@ -1,0 +1,10 @@
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\bin\Debug\ship.png
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.exe.config
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.exe
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.pdb
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.Form1.resources
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.exe
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.pdb
