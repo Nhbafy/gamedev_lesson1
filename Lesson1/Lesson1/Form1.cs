@@ -24,10 +24,11 @@ namespace Lesson1
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Down) SpaceShip.Down(Game.myShip);
-            if (e.KeyData == Keys.Right) SpaceShip.Right(Game.myShip);
-            if (e.KeyData == Keys.Up) SpaceShip.Up(Game.myShip);
-            if (e.KeyData == Keys.Left) SpaceShip.Left(Game.myShip);
+            if (e.KeyData == Keys.Down) SpaceShip.MoveDown(Game.myShip);
+            if (e.KeyData == Keys.Right) SpaceShip.MoveRight(Game.myShip);
+            if (e.KeyData == Keys.Up) SpaceShip.MoveUp(Game.myShip);
+            if (e.KeyData == Keys.Left) SpaceShip.MoveLeft(Game.myShip);
+            if (e.KeyData == Keys.Space) SpaceShip.Shot(Game.myShip);
         }
 
 

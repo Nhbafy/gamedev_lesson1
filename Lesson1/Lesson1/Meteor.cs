@@ -19,7 +19,6 @@ namespace Lesson1
         public override void Draw()
         {
             br = new SolidBrush(Color.LightGreen);
-
             Point[] polygon = new Point[9];
             for (int i = 0; i < polygon.Length; i++)
             {
@@ -33,6 +32,7 @@ namespace Lesson1
                 polygon[7] = new Point(Pos.X, Pos.Y + 4);
                 polygon[8] = new Point(Pos.X, Pos.Y);
             }
+
             Game.Buffer.Graphics.FillPolygon(br, polygon);
 
         }
