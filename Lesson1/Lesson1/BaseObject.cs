@@ -2,7 +2,7 @@
 using System.Drawing;
 namespace Lesson1
 {
-    class BaseObject
+    abstract class BaseObject
     {
         protected Point Pos;
         protected Point Dir;
@@ -11,24 +11,17 @@ namespace Lesson1
         
 
 
-        public BaseObject(Point pos, Point dir, Size size) : this (pos,dir)
+        protected BaseObject(Point pos, Point dir, Size size) : this (pos,dir)
         {
             Size = size;
         }
-        public BaseObject(Point pos, Point dir)
+        protected BaseObject(Point pos, Point dir)
         {
             Pos = pos;
             Dir = dir;
-
         }
 
-        public virtual void Draw()
-        {
-           
-        }
-        public virtual void Update()
-        {
-
-        }
+        public abstract void Draw();
+        public abstract void Update();
     }
 }

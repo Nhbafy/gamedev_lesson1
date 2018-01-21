@@ -13,14 +13,13 @@ namespace Lesson1
         {
             
         }
-        
+
         public override void Draw()
         {
             br = new SolidBrush(Color.Crimson);
             Game.Buffer.Graphics.FillEllipse(br ,Pos.X, Pos.Y, Size.Width, Size.Height);
-
-
         }
+
         public override void Update()
         {
             Pos.X = Pos.X + Dir.X;

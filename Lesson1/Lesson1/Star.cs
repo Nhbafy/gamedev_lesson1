@@ -13,7 +13,6 @@ namespace Lesson1
 
         public Star( Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-            
             this.Pos.X = random.Next(0,Game.Width);
             this.Pos.Y = random.Next(0, Game.Height);
         }
@@ -23,6 +22,7 @@ namespace Lesson1
             Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X, Pos.Y, Pos.X + Size.Width, Pos.Y + Size.Height);
             Game.Buffer.Graphics.DrawLine(Pens.White, Pos.X + Size.Width, Pos.Y, Pos.X, Pos.Y + Size.Height);
         }
+
         public override void Update()
         {
             Pos.X = Pos.X + Dir.X;

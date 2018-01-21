@@ -1,4 +1,3 @@
-C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\bin\Debug\ship.png
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.exe.config
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.exe
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\bin\Release\Lesson1.pdb
@@ -8,3 +7,4 @@ C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.exe
 C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.pdb
+C:\Users\User\Documents\GitHub\gamedev_stud\Lesson1\Lesson1\obj\Release\Lesson1.csprojResolveAssemblyReference.cache
