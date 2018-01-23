@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Lesson1
 {
-    class SpaceShip :BaseObject
+    class SpaceShip :BaseObject,ICollision
     {
         public SpaceShip(Point pos, Point dir) : base(pos, dir)
         {

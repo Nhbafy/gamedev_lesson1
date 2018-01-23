@@ -14,7 +14,7 @@ namespace Lesson1
         public static Star[] _stars;
         public static SpaceShip myShip;
         public static Planet planet1;
-        public static BaseObject[] _meteors;
+        public static Meteor[] _meteors;
 
         public static void Init(Form form)
         {
@@ -72,11 +72,11 @@ namespace Lesson1
 
             planet1 = new Planet(new Point(650, 40), new Point(0, 0),new Size(80,80));
 
-            _meteors = new Meteor[10];
+            _meteors = new Meteor[15];
 
             for (int i = 0; i < _meteors.Length; i++)
             {
-                _meteors[i] = new Meteor(new Point(600, 100 + 50 * i), new Point());
+                _meteors[i] = new Meteor(new Point(Width + 20, 30 + 30 * i), new Point(),new Size (25,25));
             }
         }
         public static void Update()
@@ -96,6 +96,16 @@ namespace Lesson1
             if (Bullet.GetBullet != null)
             {
                 Bullet.GetBullet.Update();
+                foreach (BaseObject a in _meteors)
+                {
+                    if (Bullet.GetBullet.Collision(a))
+                    {
+                        System.Media.SystemSounds.Hand.Play();
+                        Bullet.GetBullet = null;
+                        a.Pos.X = Width + 20;
+                        break;
+                    }
+                }
             }
         }
         private static void Timer_Tick(object sender, EventArgs e)
@@ -104,7 +114,6 @@ namespace Lesson1
 
             Update();
         }
-
 
     }
 }

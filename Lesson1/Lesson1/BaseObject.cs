@@ -2,14 +2,14 @@
 using System.Drawing;
 namespace Lesson1
 {
-    abstract class BaseObject
+    abstract class BaseObject : ICollision
     {
-        protected Point Pos;
+        public Point Pos;
         protected Point Dir;
         protected Size Size;
         protected Brush br;
-        
 
+        public Rectangle Rect => new Rectangle(Pos,Size);
 
         protected BaseObject(Point pos, Point dir, Size size) : this (pos,dir)
         {
@@ -23,5 +23,12 @@ namespace Lesson1
 
         public abstract void Draw();
         public abstract void Update();
+
+        public bool Collision(ICollision o)
+        {
+            return o.Rect.IntersectsWith(this.Rect);
+
+        }
+
     }
 }
