@@ -10,15 +10,21 @@ namespace Lesson1
 {
     class SpaceShip :BaseObject,ICollision
     {
-        public SpaceShip(Point pos, Point dir) : base(pos, dir)
+        private int _health = 3;
+        public int Health { get => _health; set => _health = value; }
+        public static Image Ship { get => ship; set => ship = value; }
+
+        public SpaceShip(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
             
         }
         private static Image ship = Image.FromFile("ship.png");
 
+       
+
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(ship, Pos);
+            Game.Buffer.Graphics.DrawImage(Ship, Pos);
         }
 
         public override void Update()
@@ -48,8 +54,15 @@ namespace Lesson1
 
         public static void Shot(SpaceShip myShip)
         {
-            Bullet.GetBullet = new Bullet(new Point(myShip.Pos.X + ship.Width, myShip.Pos.Y + ship.Height / 2),new Point(20,0), new Size(10,10));
+            Bullet._Bullet = new Bullet(new Point(myShip.Pos.X + Ship.Width, myShip.Pos.Y + Ship.Height / 2),new Point(20,0), new Size(10,10));
         }
+
+        public static event Message MessageDie;
+
+        public void Die()
+        {
+            MessageDie?.Invoke();
+        }
 
     }
 }

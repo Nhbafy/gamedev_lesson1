@@ -31,10 +31,5 @@ namespace Lesson1
             if (e.KeyData == Keys.Space) SpaceShip.Shot(Game.myShip);
         }
 
-
-
-
-
-
     }
 }

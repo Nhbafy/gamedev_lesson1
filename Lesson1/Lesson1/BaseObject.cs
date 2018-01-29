@@ -11,12 +11,9 @@ namespace Lesson1
 
         public Rectangle Rect => new Rectangle(Pos,Size);
 
-        protected BaseObject(Point pos, Point dir, Size size) : this (pos,dir)
+        protected BaseObject(Point pos, Point dir, Size size)
         {
             Size = size;
-        }
-        protected BaseObject(Point pos, Point dir)
-        {
             Pos = pos;
             Dir = dir;
         }
@@ -29,6 +26,7 @@ namespace Lesson1
             return o.Rect.IntersectsWith(this.Rect);
 
         }
+        public delegate void Message();
 
     }
 }

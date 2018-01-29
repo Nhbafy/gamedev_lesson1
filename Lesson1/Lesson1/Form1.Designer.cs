@@ -28,22 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.HitCountLable = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // HitCountLable
+            // 
+            this.HitCountLable.AutoSize = true;
+            this.HitCountLable.Location = new System.Drawing.Point(12, 9);
+            this.HitCountLable.Name = "HitCountLable";
+            this.HitCountLable.Size = new System.Drawing.Size(128, 13);
+            this.HitCountLable.TabIndex = 0;
+            this.HitCountLable.Text = "Game.HitCount.ToString()";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.HitCountLable);
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label HitCountLable;
     }
 }

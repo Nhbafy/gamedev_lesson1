@@ -9,12 +9,13 @@ namespace Lesson1
 {
     class Bullet : BaseObject
     {
-        private static Bullet bullet;
+
+        private static  Bullet bullet;
         public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
         }
 
-        internal static Bullet GetBullet { get => bullet; set => bullet = value; }
+        internal static Bullet _Bullet { get => bullet; set => bullet = value; }
 
         public override void Draw()
         {

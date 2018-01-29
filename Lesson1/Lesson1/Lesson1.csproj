@@ -69,6 +69,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="ICollision.cs" />
+    <Compile Include="MedKit.cs" />
     <Compile Include="Meteor.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="Program.cs" />
