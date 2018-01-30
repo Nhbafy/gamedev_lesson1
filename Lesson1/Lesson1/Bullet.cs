@@ -10,12 +10,12 @@ namespace Lesson1
     class Bullet : BaseObject
     {
 
-        private static  Bullet bullet;
+
+        private static List<Bullet> _bullets = new List<Bullet>();
         public Bullet(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
         }
-
-        internal static Bullet _Bullet { get => bullet; set => bullet = value; }
+        internal static List<Bullet> _Bullets { get => _bullets; set => _bullets = value; }
 
         public override void Draw()
         {

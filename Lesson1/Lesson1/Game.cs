@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Lesson1
 {
     static class Game
@@ -14,11 +17,13 @@ namespace Lesson1
         public static Star[] _stars;
         public static SpaceShip myShip;
         public static Planet planet1;
-        public static Meteor[] _meteors;
+       // public static List<Meteor> _meteors = new List<Meteor>(15);
+        public static  Meteor[] _meteors;
         private static int _hitCount;
         public static MedKit medKit;
         private static Timer _timer = new Timer() { Interval = 50 };
         public static Random Rnd = new Random();
+
 
         public static void Finish()
         {
@@ -27,8 +32,6 @@ namespace Lesson1
             FontStyle.Underline), Brushes.White, 200, 100);
             Buffer.Render();
         }
-
-        public static int HitCount { get => _hitCount; set => _hitCount = value; }
 
         public static void Init(Form form)
         {
@@ -52,25 +55,20 @@ namespace Lesson1
         {
             Buffer.Graphics.Clear(Color.Black);
 
-            foreach (BaseObject obj in _stars)
-            {
-                obj.Draw();
-            }
-
+            foreach (BaseObject obj in _stars) obj.Draw();
             myShip.Draw();
-
+            medKit.Draw();
             planet1.Draw();
-
             foreach (BaseObject obj in _meteors)
             {
-                obj.Draw();
+                if (obj != null)
+                {
+                    obj.Draw();
+                }
             }
-
-            if (Bullet._Bullet != null)
-            {
-                Bullet._Bullet.Draw();
-            }
-            medKit.Draw();
+            for (int i = 0; i < Bullet._Bullets.Count; i++) Bullet._Bullets[i].Draw();
+ 
+            
             Buffer.Render();
         }
 
@@ -96,53 +94,57 @@ namespace Lesson1
         }
         public static void Update()
         {
-            foreach (BaseObject obj in _stars)
+            foreach (BaseObject obj in _stars) obj.Update();
+            foreach (BaseObject obj in Bullet._Bullets) obj.Update();
+            for (var i = 0; i < _meteors.Length; i++)
             {
-                obj.Update();
-            }
-
-            myShip.Update();
-            if (myShip.Collision(medKit))
-            {
-                myShip.Health++;
-                medKit.Update();
-            }
-
-            foreach (BaseObject obj in _meteors)
-            {
-                obj.Update();
-                if (myShip.Collision(obj))
+                if (_meteors[i] == null) continue;
+                _meteors[i].Update();
+                for (int j = 0; j < Bullet._Bullets.Count; j++)
                 {
-                    myShip.Health--;
-                    if (myShip.Health==0)
-                    {
-                        myShip.Die();
-                    }
-                }
-            }
-
-            if (Bullet._Bullet != null)
-            {
-                Bullet._Bullet.Update();
-                foreach (BaseObject a in _meteors)
-                {
-                    if (Bullet._Bullet.Collision(a))
+                    if (_meteors[i]!=null && Bullet._Bullets[j].Collision(_meteors[i]))
                     {
                         System.Media.SystemSounds.Hand.Play();
-                        Bullet._Bullet = null;
-                        a.Pos.X = Width + 20;
-                        HitCount+=1;
-                        break;
-                    }
+                        Bullet._Bullets.RemoveAt(j);
+                        _meteors[i] = null; ;
+                        _hitCount += 1;
+                        j--;
+                    }    
+                }
+                
+                if (_meteors[i] == null || !myShip.Collision(_meteors[i])) continue;
+                myShip.Health--;
+                System.Media.SystemSounds.Asterisk.Play();
+                if (myShip.Collision(medKit))
+                {
+                    myShip.Health++;
+                    medKit.Update();
+                }
+                if (myShip.Health <= 0) myShip.Die();
+            }
+            if (NewMeteors(_meteors))
+            {
+                _meteors = new Meteor[_meteors.Length + 1];
+                for (int i = 0; i < _meteors.Length; i++)
+                {
+                    _meteors[i] = new Meteor(new Point(Width + 20, 30 + 30 * i), new Point(), new Size(25, 25));
                 }
             }
-            
         }
         private static void Timer_Tick(object sender, EventArgs e)
         {
             Draw();
-
             Update();
+        }
+
+        private static bool NewMeteors (Meteor[] metArr)
+        {
+            bool check = true;
+            foreach (var met in metArr)
+            {
+                if (met != null) check = false;
+            }
+            return check;
         }
 
     }

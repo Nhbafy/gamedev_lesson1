@@ -54,7 +54,8 @@ namespace Lesson1
 
         public static void Shot(SpaceShip myShip)
         {
-            Bullet._Bullet = new Bullet(new Point(myShip.Pos.X + Ship.Width, myShip.Pos.Y + Ship.Height / 2),new Point(20,0), new Size(10,10));
+           // Bullet._Bullet = new Bullet(new Point(myShip.Pos.X + Ship.Width, myShip.Pos.Y + Ship.Height / 2),new Point(20,0), new Size(10,10));
+            Bullet._Bullets.Add(new Bullet(new Point(myShip.Pos.X + Ship.Width, myShip.Pos.Y + Ship.Height / 2), new Point(20, 0), new Size(10, 10)));
         }
 
         public static event Message MessageDie;
@@ -62,7 +63,8 @@ namespace Lesson1
         public void Die()
         {
             MessageDie?.Invoke();
-        }
+        }
+
 
     }
 }
